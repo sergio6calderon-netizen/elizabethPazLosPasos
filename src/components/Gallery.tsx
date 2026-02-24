@@ -4,16 +4,16 @@ import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 
 const galleryImages = [
-  { src: '/gallery/edificio-principal.jpeg', name: 'Edificio Principal', description: 'Arquitectura moderna con jardines y fuente' },
-  { src: '/gallery/capilla-velacion.jpeg', name: 'Capilla de Velación', description: 'Espacio cálido y acogedor para despedidas' },
-  { src: '/gallery/capilla-san-jose.jpeg', name: 'Capilla San José', description: 'Diseño contemporáneo con amplios ventanales' },
   { src: '/gallery/entrada-principal.jpeg', name: 'Entrada Principal', description: 'Acceso controlado y seguro' },
-  { src: '/gallery/sala-espera.jpeg', name: 'Sala de Espera', description: 'Mobiliario de lujo y ambiente tranquilo' },
-  { src: '/gallery/recepcion.jpeg', name: 'Recepción', description: 'Atención personalizada al llegar' },
-  { src: '/gallery/columbarios.jpeg', name: 'Columbarios', description: 'Espacios dignos para cremaciones' },
+  { src: '/gallery/jardines-los-pasos.jpeg', name: 'Jardines Los Pasos', description: 'Amplios espacios verdes tipo jardín' },
   { src: '/gallery/jardin-cascada.jpeg', name: 'Jardín con Cascada', description: 'Naturaleza y tranquilidad' },
   { src: '/gallery/senderos-jardin.jpeg', name: 'Senderos del Jardín', description: 'Paseos entre la naturaleza' },
-  { src: '/gallery/jardines-los-pasos.jpeg', name: 'Jardines Los Pasos', description: 'Amplios espacios verdes' },
+  { src: '/gallery/capilla-velacion.jpeg', name: 'Capilla de Velación', description: 'Espacio cálido y acogedor para despedidas' },
+  { src: '/gallery/capilla-san-jose.jpeg', name: 'Capilla San José', description: 'Diseño contemporáneo con amplios ventanales' },
+  { src: '/gallery/columbarios.jpeg', name: 'Columbarios', description: 'Espacios dignos para cremaciones' },
+  { src: '/gallery/edificio-principal.jpeg', name: 'Edificio Principal', description: 'Arquitectura moderna con jardines y fuente' },
+  { src: '/gallery/sala-espera.jpeg', name: 'Sala de Espera', description: 'Mobiliario de lujo y ambiente tranquilo' },
+  { src: '/gallery/recepcion.jpeg', name: 'Recepción', description: 'Atención personalizada al llegar' },
   { src: '/gallery/maqueta-proyecto.jpeg', name: 'Maqueta del Proyecto', description: 'Vista completa del cementerio' },
 ]
 
