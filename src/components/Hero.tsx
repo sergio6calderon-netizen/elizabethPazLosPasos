@@ -26,9 +26,9 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg sm:text-xl text-white/80 mb-8 leading-relaxed max-w-2xl animate-fade-in-up delay-200">
-            Acompaño a las personas para estar preparados en los momentos más difíciles.
-            Brindo apoyo con <strong className="text-white">empatía y transparencia</strong>,
-            ofreciendo servicios funerarios, propiedades en cementerio y cremación.
+            Acompaño a las personas para estar preparados antes de una emergencia,
+            brindando apoyo con <strong className="text-white">empatía y transparencia</strong>,
+            ofreciendo nuestros servicios, propiedades tipo jardín, servicios funerarios, cremaciones y columbarios.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
