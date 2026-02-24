@@ -8,7 +8,7 @@ export default function About() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/5] bg-cover bg-center"
-                style={{ backgroundImage: `url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80')` }}>
+                style={{ backgroundImage: `url('/elipaz.jpeg')` }}>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-500/60 to-transparent"></div>
               </div>
               <div className="absolute bottom-6 left-6 right-6 bg-white rounded-xl p-4 shadow-xl">
