@@ -6,6 +6,7 @@ import EmergencyBanner from '@/components/EmergencyBanner'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Gallery from '@/components/Gallery'
+import Testimonials from '@/components/Testimonials'
 import Promotion from '@/components/Promotion'
 import About from '@/components/About'
 import ContactForm from '@/components/ContactForm'
@@ -22,6 +23,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Gallery />
+      <Testimonials />
       {showPromotion && <Promotion />}
       <About />
       <ContactForm />
