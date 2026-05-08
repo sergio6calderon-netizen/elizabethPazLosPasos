@@ -1,5 +1,11 @@
 'use client'
 
+declare global {
+  interface Window {
+    dataLayer: any[]
+  }
+}
+
 import { PhoneIcon } from '@heroicons/react/24/solid'
 
 export default function EmergencyBanner() {
@@ -15,6 +21,7 @@ export default function EmergencyBanner() {
         </div>
         <a 
           href="tel:+50255226697" 
+          onClick={() => window.dataLayer?.push({ event: 'phone_click', location: 'emergency_banner' })}
           className="flex items-center gap-2 bg-white text-red-700 px-4 py-2 rounded-full font-bold text-sm sm:text-base hover:bg-red-50 transition-all animate-pulse-soft"
         >
           <PhoneIcon className="h-5 w-5" />

@@ -1,5 +1,11 @@
 'use client'
 
+declare global {
+  interface Window {
+    dataLayer: any[]
+  }
+}
+
 import { useState, useEffect } from 'react'
 
 const services = ['Servicios Funerarios', 'Cremación', 'Propiedades Tipo Jardín', 'Columbarios', 'Pre-necesidad (Planificación)', 'Otro']
@@ -30,6 +36,13 @@ export default function ContactForm() {
       if (response.ok) {
         setSubmittedName(formData.nombre.split(' ')[0])
         setSubmitStatus('success')
+        window.dataLayer?.push({
+          event: 'generate_lead',
+          form_name: 'contacto_principal',
+          es_emergencia: formData.esEmergencia,
+          servicio: formData.servicio,
+          ubicacion: formData.ubicacion,
+        })
         setFormData({ nombre: '', email: '', telefono: '', esEmergencia: false, servicio: '', ubicacion: '', mensaje: '' })
       } else { setSubmitStatus('error') }
     } catch { setSubmitStatus('error') }
@@ -49,6 +62,7 @@ export default function ContactForm() {
 
             <div className="space-y-4">
               <a href="https://wa.me/50255226697" target="_blank" rel="noopener noreferrer"
+                onClick={() => window.dataLayer?.push({ event: 'whatsapp_click', location: 'contact_section' })}
                 className="flex items-center gap-4 p-4 bg-green-50 rounded-xl hover:bg-green-100 transition-colors group">
                 <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
@@ -58,7 +72,9 @@ export default function ContactForm() {
                 <div><p className="font-semibold text-gray-800 group-hover:text-green-700">WhatsApp</p><p className="text-gray-600">+502 5522-6697</p></div>
               </a>
 
-              <a href="tel:+50255226697" className="flex items-center gap-4 p-4 bg-primary-50 rounded-xl hover:bg-primary-100 transition-colors group">
+              <a href="tel:+50255226697"
+                onClick={() => window.dataLayer?.push({ event: 'phone_click', location: 'contact_section' })}
+                className="flex items-center gap-4 p-4 bg-primary-50 rounded-xl hover:bg-primary-100 transition-colors group">
                 <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />

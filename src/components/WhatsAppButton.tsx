@@ -1,11 +1,18 @@
 'use client'
 
+declare global {
+  interface Window {
+    dataLayer: any[]
+  }
+}
+
 export default function WhatsAppButton() {
   return (
     <a
       href="https://wa.me/50255226697?text=Hola%20Elizabeth,%20me%20interesa%20información%20sobre%20los%20servicios%20de%20Cementerio%20Los%20Pasos"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => window.dataLayer?.push({ event: 'whatsapp_click', location: 'floating_button' })}
       className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all group"
       aria-label="Contactar por WhatsApp"
     >

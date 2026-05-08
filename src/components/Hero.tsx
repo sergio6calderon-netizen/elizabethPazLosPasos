@@ -1,5 +1,11 @@
 'use client'
 
+declare global {
+  interface Window {
+    dataLayer: any[]
+  }
+}
+
 export default function Hero() {
   return (
     <section id="inicio" className="relative min-h-[85vh] flex items-center">
@@ -45,6 +51,7 @@ export default function Hero() {
               href="https://wa.me/50255226697?text=Hola%20Elizabeth,%20me%20interesa%20información%20sobre%20los%20servicios%20de%20Cementerio%20Los%20Pasos"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => window.dataLayer?.push({ event: 'whatsapp_click', location: 'hero_section' })}
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
